@@ -87,6 +87,58 @@ body {
   margin-right: 5px;
 }
 
+.weather-card, .forecast-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f3f4f7, #e9ebee);
+  }
+
+  .weather-info i {
+    color: #ffca28; /* Cor do ícone principal */
+  }
+
+  .temperature {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .weather-description {
+    font-size: 1.1em;
+    color: #666;
+  }
+
+  .forecast-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 1em;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .forecast-item:last-child {
+    border-bottom: none;
+  }
+
+  .day {
+    font-weight: 600;
+    color: #333;
+    
+  }
+
+  .temp-range {
+    color: #555;
+  }
+
 .status-open { background-color: #2ecc71; }
 .status-closed { background-color: #e74c3c; }
 .status-maintenance { background-color: #f1c40f; }
+
+@media all and (max-width: 768px){
+  #PrevTempo{
+    display: flex;
+    flex-direction: column;
+  }
+}
