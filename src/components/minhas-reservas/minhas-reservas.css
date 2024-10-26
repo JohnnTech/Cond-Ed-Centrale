@@ -1,0 +1,116 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #34495e;
+  --accent: #3498db;
+  --light-bg: #f5f6fa;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+}
+
+.navbar {
+  background: var(--primary);
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.reservation-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.status-active {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.status-pending {
+  background-color: #f1c40f;
+  color: white;
+}
+
+.status-completed {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.area-icon {
+  font-size: 2em;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.btn-new-reservation {
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-new-reservation:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  color: white;
+}
+
+.btn-cancel {
+  color: #e74c3c;
+  border: none;
+  background: none;
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+
+.btn-cancel:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+.filter-btn {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.empty-state-icon {
+  font-size: 4em;
+  color: #bdc3c7;
+  margin-bottom: 20px;
+}

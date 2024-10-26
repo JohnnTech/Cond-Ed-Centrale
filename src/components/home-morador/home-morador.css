@@ -1,0 +1,92 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #34495e;
+  --accent: #3498db;
+  --light-bg: #f5f6fa;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+}
+
+.navbar {
+  background: var(--primary);
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+}
+
+.welcome-section {
+  background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+              url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 60px 0;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.quick-access-card {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  background: white;
+}
+
+.quick-access-card i {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.news-card {
+  margin-bottom: 20px;
+}
+
+.news-card .date {
+  color: var(--accent);
+  font-size: 0.9em;
+}
+
+.upcoming-events {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.event-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.event-item:last-child {
+  border-bottom: none;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.status-open { background-color: #2ecc71; }
+.status-closed { background-color: #e74c3c; }
+.status-maintenance { background-color: #f1c40f; }

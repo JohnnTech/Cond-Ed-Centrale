@@ -1,0 +1,156 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.recovery-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+}
+
+.recovery-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.recovery-header img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.recovery-steps {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  background: #e9ecef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.step.active .step-number {
+  background: var(--accent-color);
+  color: white;
+}
+
+.step.completed .step-number {
+  background: #2ecc71;
+  color: white;
+}
+
+.step-line {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e9ecef;
+  z-index: 1;
+}
+
+.step-text {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.step.active .step-text {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.form-floating {
+  margin-bottom: 20px;
+}
+
+.btn-recovery {
+  background: var(--accent-color);
+  border: none;
+  padding: 12px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-recovery:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.back-to-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-to-login a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-to-login a:hover {
+  color: #2980b9;
+}
+
+.recovery-form {
+  display: none;
+}
+
+.recovery-form.active {
+  display: block;
+}
+
+.success-message {
+  text-align: center;
+  display: none;
+}
+
+.success-message i {
+  font-size: 48px;
+  color: #2ecc71;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.loading-spinner {
+  display: none;
+  margin-left: 8px;
+}
