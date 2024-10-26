@@ -30,7 +30,7 @@ body {
 
 .login-image {
   flex: 1;
-  background-image: url("https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3");
+  background-image: url("/src/assets/fachada/fachadaIlustrativa.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
