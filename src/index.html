@@ -1,0 +1,262 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edificio Centrale - Seu lar, seu estilo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/components/home/home.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/src/assets/logo/logoBrancaFundoTransparente.png"
+            alt="Edifício Centrale Logo"
+            height="50"
+          />
+        </a>
+        <button
+          class="navbar-toggler bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#estrutura">Estrutura</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#galeria">Galeria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li> -->
+            <li class="nav-item">
+              <a
+                class="btn btn-outline-light ms-3"
+                href="/src/components/login/login.html"
+                >Área do Morador</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="display-4 mb-4" data-aos="fade-up">
+          Bem-vindo ao Edifício Centrale
+        </h1>
+        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+          Um novo conceito em moradia de alto padrão no coração da cidade
+        </p>
+        <a
+          href="/src/components/login/login.html"
+          class="btn btn-primary btn-lg"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Acesse sua área
+        </a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="estrutura" class="features-section">
+      <div class="container">
+        <h2 class="text-center mb-5">Nossa Estrutura</h2>
+        <div class="row">
+          <!-- <div class="col-md-4 mb-4" data-aos="fade-up">
+            <div class="feature-card">
+              <i class="bx bx-shield-quarter feature-icon"></i>
+              <h4>Segurança 24h</h4>
+              <p>
+                Sistema de monitoramento avançado e equipe de segurança
+                altamente treinada.
+              </p>
+            </div>
+          </div> -->
+          <div
+            class="col-md-12 mb-4 text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="feature-card">
+              <i class="bx bx-spa feature-icon"></i>
+              <h4>Área de Lazer</h4>
+              <p>Duas áreas de churrasqueiras</p>
+            </div>
+          </div>
+          <!-- <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-card">
+              <i class="bx bx-building-house feature-icon"></i>
+              <h4>Estrutura Moderna</h4>
+              <p>
+                Arquitetura contemporânea com acabamento premium e
+                sustentabilidade.
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">13</div>
+              <div>Apartamentos</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">300m²</div>
+              <div>Área Total</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div>Andares</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">98%</div>
+              <div>Satisfação</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery-section">
+      <div class="container">
+        <h2 class="text-center mb-5">Galeria</h2>
+        <div class="row">
+          <div class="col-md-4" data-aos="zoom-in">
+            <div class="gallery-item">
+              <img src="/src/assets/fachada/fachadaIlustrativa.jpg" alt="Fachada" />
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="gallery-item">
+              <img src="/src/assets/area de lazer/areaDeLazer01.jpg" alt="Área de Lazer" />
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="gallery-item">
+              <img src="/src/assets/estacionamento/estacionamentoIlustrativo.jpg" alt="Estacionamento" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <h2 class="mb-4">Entre em Contato</h2>
+            <form class="contact-form">
+              <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Nome" />
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Email" />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  placeholder="Mensagem"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <div class="location-map borderDiv">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15345.523803191165!2d-48.2610603!3d-15.9414703!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bdb004d65c58d%3A0xa785a28dd7b0a4fb!2sEdif%C3%ADcio%20Centrale!5e0!3m2!1spt-BR!2sbr!4v1729943349358!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5>Edifício Centrale</h5>
+            <p>
+              Rua 3, 28, lt 25<br />
+              Bairro Centro<br />
+              Santo Antônio do Descoberto - GO
+            </p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5>Contato</h5>
+            <p>
+              Tel: (61) 1234-5678<br />
+              Email: contato@Edifíciocentrale.com
+            </p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5>Redes Sociais</h5>
+            <div class="social-links">
+              <a href="#" class="me-3"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="me-3"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="me-3"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p>&copy; 2024 Edifício Centrale. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="/src/components/home/home.js"></script>
+  </body>
+</html>
