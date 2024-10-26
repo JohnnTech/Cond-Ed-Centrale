@@ -24,7 +24,7 @@ function handleLogin(event) {
     }
 
     // Simulate successful login
-    window.location.href = "/dashboard";
+    window.location.href = "/src/components/home-morador/home-morador.html";
   }, 1500);
 
   return false;
