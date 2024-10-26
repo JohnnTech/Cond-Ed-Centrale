@@ -1,0 +1,104 @@
+      :root {
+        --primary: #2c3e50;
+        --secondary: #34495e;
+        --accent: #3498db;
+        --light-bg: #f5f6fa;
+        --success: #2ecc71;
+        --warning: #f1c40f;
+        --danger: #e74c3c;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: var(--light-bg);
+      }
+
+      .navbar {
+        background: var(--primary);
+      }
+
+      .navbar-brand {
+        color: white !important;
+        font-weight: bold;
+      }
+
+      .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .status-badge {
+        font-size: 0.8em;
+        padding: 5px 10px;
+        border-radius: 15px;
+      }
+
+      .status-open {
+        background-color: #e3f2fd;
+        color: #1976d2;
+      }
+
+      .status-in-progress {
+        background-color: #fff3e0;
+        color: #f57c00;
+      }
+
+      .status-resolved {
+        background-color: #e8f5e9;
+        color: #388e3c;
+      }
+
+      .status-closed {
+        background-color: #ffebee;
+        color: #d32f2f;
+      }
+
+      .priority-high {
+        border-left: 4px solid var(--danger);
+      }
+
+      .priority-medium {
+        border-left: 4px solid var(--warning);
+      }
+
+      .priority-low {
+        border-left: 4px solid var(--success);
+      }
+
+      .occurrence-card {
+        transition: transform 0.2s;
+      }
+
+      .occurrence-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .filter-button {
+        border: 1px solid #ddd;
+        background: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .filter-button:hover,
+      .filter-button.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      .comments-section {
+        max-height: 200px;
+        overflow-y: auto;
+      }
+
+      .comment {
+        border-left: 3px solid var(--accent);
+        padding-left: 10px;
+        margin-bottom: 10px;
+      }

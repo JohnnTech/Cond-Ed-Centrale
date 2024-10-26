@@ -1,0 +1,97 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #34495e;
+  --accent: #3498db;
+  --light-bg: #f5f6fa;
+  --success: #2ecc71;
+  --warning: #f1c40f;
+  --danger: #e74c3c;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+}
+
+.navbar {
+  background: var(--primary);
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.financial-summary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.bill-card {
+  border-left: 4px solid transparent;
+}
+
+.bill-paid {
+  border-left-color: var(--success);
+}
+
+.bill-pending {
+  border-left-color: var(--warning);
+}
+
+.bill-late {
+  border-left-color: var(--danger);
+}
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8em;
+}
+
+.status-paid {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.status-pending {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.status-late {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.payment-methods img {
+  height: 30px;
+  margin-right: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.payment-methods img:hover {
+  opacity: 1;
+}

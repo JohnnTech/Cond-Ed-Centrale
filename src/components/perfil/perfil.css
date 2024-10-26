@@ -1,0 +1,107 @@
+      :root {
+        --primary: #2c3e50;
+        --secondary: #34495e;
+        --accent: #3498db;
+        --light-bg: #f5f6fa;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: var(--light-bg);
+      }
+
+      .navbar {
+        background: var(--primary);
+      }
+
+      .navbar-brand {
+        color: white !important;
+        font-weight: bold;
+      }
+
+      .profile-header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 40px 0;
+        margin-bottom: 30px;
+      }
+
+      .profile-avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+      }
+
+      .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        font-weight: 500;
+      }
+
+      .btn-update {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+
+      .btn-update:hover {
+        background: #2980b9;
+        transform: translateY(-2px);
+      }
+
+      .vehicle-card,
+      .pet-card {
+        border-left: 4px solid var(--accent);
+      }
+
+      .notification-item {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+      }
+
+      .notification-item:hover {
+        background-color: #f8f9fa;
+      }
+
+      .custom-switch {
+        padding-left: 2.25rem;
+      }
+
+      .profile-section {
+        transition: all 0.3s ease;
+      }
+
+      .profile-section:hover {
+        transform: translateY(-2px);
+      }
+
+      .badge-vehicle {
+        background-color: #e8f5e9;
+        color: #388e3c;
+        padding: 5px 10px;
+        border-radius: 15px;
+      }
+
+      .badge-pet {
+        background-color: #e3f2fd;
+        color: #1976d2;
+        padding: 5px 10px;
+        border-radius: 15px;
+      }
+
+      .emergency-contact {
+        border-left: 4px solid #e74c3c;
+      }
