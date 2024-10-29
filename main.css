@@ -1,0 +1,12 @@
+/* Ajustes de estilo para barra lateral em telas pequenas */
+@media (max-width: 768px) {
+  .navbar-nav {
+    background-color: var(--primary);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .nav-link {
+    color: #fff !important;
+    padding-left: 20px;
+  }
+}

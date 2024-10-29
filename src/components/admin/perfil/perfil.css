@@ -2,9 +2,9 @@
   --primary: #2c3e50;
   --secondary: #34495e;
   --accent: #3498db;
+  --success: #2ecc71;
   --warning: #f1c40f;
   --danger: #e74c3c;
-  --success: #2ecc71;
   --light-bg: #f5f6fa;
 }
 
@@ -46,57 +46,53 @@ body {
   padding: 20px;
 }
 
-.stat-card {
+.settings-card {
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
 }
 
-.stat-card:hover {
+.settings-card:hover {
   transform: translateY(-5px);
 }
 
-.quick-action {
-  background: white;
-  border-radius: 10px;
-  padding: 15px;
+.settings-icon {
+  font-size: 2rem;
+  color: var(--accent);
   margin-bottom: 15px;
-  cursor: pointer;
-  transition: all 0.3s;
 }
 
-.quick-action:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.custom-switch {
+  padding-left: 2.25rem;
 }
 
-.chart-card {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+.profile-photo-container {
+  position: relative;
+  display: inline-block;
 }
 
-.notification-item {
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-  transition: background-color 0.3s;
+.profile-photo-container .btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.notification-item:hover {
-  background-color: #f8f9fa;
-}
+@media (max-width: 768px) {
+  .profile-header {
+    text-align: center;
+  }
 
-.urgent {
-  border-left: 4px solid var(--danger);
-}
-
-.warning {
-  border-left: 4px solid var(--warning);
-}
-
-.info {
-  border-left: 4px solid var(--accent);
+  .profile-photo-container img {
+    width: 120px;
+    height: 120px;
+  }
 }
