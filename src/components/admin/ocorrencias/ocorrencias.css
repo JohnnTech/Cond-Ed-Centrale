@@ -1,0 +1,149 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #34495e;
+  --accent: #3498db;
+  --warning: #f1c40f;
+  --danger: #e74c3c;
+  --success: #2ecc71;
+  --light-bg: #f5f6fa;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--light-bg);
+}
+
+.navbar {
+  background: var(--primary);
+}
+
+.sidebar {
+  background: var(--secondary);
+  min-height: calc(100vh - 56px);
+  color: white;
+  padding-top: 20px;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px 20px;
+  margin: 4px 0;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: var(--primary);
+  color: white;
+}
+
+.sidebar .nav-link i {
+  width: 25px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.occurrence-status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: var(--warning);
+  color: white;
+}
+
+.status-in-progress {
+  background-color: var(--accent);
+  color: white;
+}
+
+.status-resolved {
+  background-color: var(--success);
+  color: white;
+}
+
+.status-cancelled {
+  background-color: var(--danger);
+  color: white;
+}
+
+.priority-high {
+  color: var(--danger);
+}
+
+.priority-medium {
+  color: var(--warning);
+}
+
+.priority-low {
+  color: var(--accent);
+}
+
+.occurrence-card {
+  transition: transform 0.2s;
+}
+
+.occurrence-card:hover {
+  transform: translateY(-5px);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: #e9ecef;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline-date {
+  font-size: 0.85em;
+  color: #6c757d;
+}
+
+.filters {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-filter {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

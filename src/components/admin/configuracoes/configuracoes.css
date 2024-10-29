@@ -1,0 +1,220 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #34495e;
+  --accent: #3498db;
+  --success: #2ecc71;
+  --warning: #f1c40f;
+  --danger: #e74c3c;
+  --light-bg: #f5f6fa;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+}
+
+.navbar {
+  background: var(--primary);
+}
+
+.sidebar {
+  background: var(--secondary);
+  min-height: calc(100vh - 56px);
+  color: white;
+  padding-top: 20px;
+}
+
+.sidebar .nav-link {
+  color: rgba(255,255,255,0.8);
+  padding: 12px 20px;
+  margin: 4px 0;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: var(--primary);
+  color: white;
+}
+
+.sidebar .nav-link i {
+  width: 25px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.settings-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.settings-card:hover {
+  transform: translateY(-5px);
+}
+
+.settings-icon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.custom-switch {
+  padding-left: 2.25rem;
+}
+
+.backup-status {
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.backup-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.backup-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.theme-preview {
+  width: 100px;
+  height: 60px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.theme-preview:hover {
+  transform: scale(1.1);
+}
+
+.notification-item {
+  padding: 10px;
+  border-left: 4px solid transparent;
+}
+
+.notification-item.active {
+  border-left-color: var(--accent);
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.integration-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.api-key {
+  font-family: monospace;
+  padding: 5px 10px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.module-toggle {
+  width: 60px;
+  height: 30px;
+}
+
+.theme-preset {
+  width: 60px;
+  height: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.theme-preset:hover {
+  transform: scale(1.05);
+}
+
+.theme-preset.active {
+  border-color: var(--accent);
+}
+
+.form-control-color {
+  width: 50px;
+  padding: 0;
+  height: 38px;
+}
+
+.photo-item {
+  cursor: move;
+  user-select: none;
+}
+
+.photo-item.sortable-ghost {
+  opacity: 0.4;
+}
+
+.photo-item.sortable-chosen {
+  background: rgba(52, 152, 219, 0.1);
+}
+
+.drag-handle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: move;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.photo-item:hover .drag-handle {
+  opacity: 1;
+}
+
+.folder-item .card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.folder-item .card:hover {
+  transform: translateY(-5px);
+}
+
+.photo-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+}
+
+.breadcrumb-item a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.photo-overlay .btn-group {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

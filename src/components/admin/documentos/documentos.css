@@ -1,0 +1,188 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #34495e;
+  --accent: #3498db;
+  --warning: #f1c40f;
+  --danger: #e74c3c;
+  --success: #2ecc71;
+  --light-bg: #f5f6fa;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+}
+
+.navbar {
+  background: var(--primary);
+}
+
+.sidebar {
+  background: var(--secondary);
+  min-height: calc(100vh - 56px);
+  color: white;
+  padding-top: 20px;
+}
+
+.sidebar .nav-link {
+  color: rgba(255,255,255,0.8);
+  padding: 12px 20px;
+  margin: 4px 0;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: var(--primary);
+  color: white;
+}
+
+.sidebar .nav-link i {
+  width: 25px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.doc-card {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.doc-card:hover {
+  transform: translateY(-5px);
+}
+
+.doc-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.pdf-icon { color: #e74c3c; }
+.doc-icon { color: #3498db; }
+.xls-icon { color: #2ecc71; }
+.img-icon { color: #9b59b6; }
+
+.tag {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.tag-important { 
+  background: #ffe9e9;
+  color: #dc3545;
+}
+
+.tag-contract {
+  background: #e9f7ef;
+  color: #27ae60;
+}
+
+.tag-financial {
+  background: #fff9e6;
+  color: #f39c12;
+}
+
+.search-box {
+  background: white;
+  border-radius: 25px;
+  padding: 8px 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: calc(100% - 30px);
+}
+
+.search-box i {
+  color: var(--secondary);
+}
+
+.folder-tree {
+  list-style: none;
+  padding-left: 0;
+}
+
+.folder-tree ul {
+  list-style: none;
+  padding-left: 25px;
+}
+
+.folder-tree li {
+  padding: 8px 0;
+}
+
+.folder-tree .folder {
+  color: #f1c40f;
+}
+
+.folder-tree .file {
+  color: var(--secondary);
+}
+
+.upload-zone {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  background: white;
+  transition: all 0.3s;
+}
+
+.upload-zone:hover {
+  border-color: var(--accent);
+  background: #f8f9fa;
+}
+
+.version-badge {
+  font-size: 0.8em;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: #e9ecef;
+}
+
+.doc-actions .btn {
+  padding: 4px 8px;
+  font-size: 0.9em;
+}
+
+.permission-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.permission-public { background: #2ecc71; }
+.permission-restricted { background: #e74c3c; }
+.permission-internal { background: #f1c40f; }
+
+.financial-doc {
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
+}
+
+.month-folder {
+  margin-left: 15px;
+  padding: 5px 0;
+}
+
+.year-folder {
+  font-weight: bold;
+  margin-top: 10px;
+}

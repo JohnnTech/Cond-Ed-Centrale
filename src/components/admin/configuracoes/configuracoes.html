@@ -1,0 +1,826 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configurações - Edifício Centrale</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/modular/sortable.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/components/admin/configuracoes/configuracoes.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/src/components/admin/dashboard/dashboard.html">
+          <i class="fas fa-building me-2"></i>Edifício Centrale - Admin
+        </a>
+        <div class="d-flex align-items-center">
+          <span class="text-white me-3">Bem-vindo, Carlos (Síndico)</span>
+          <a href="/src/components/logout/logout.html" class="btn btn-outline-light btn-sm">
+            <i class="fas fa-sign-out-alt"></i> Sair
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-2 sidebar">
+          <nav class="nav flex-column">
+            <a class="nav-link" href="/src/components/admin/dashboard/dashboard.html">
+              <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a class="nav-link" href="/src/components/admin/moradores/moradores.html">
+              <i class="fas fa-users"></i> Moradores
+            </a>
+            <a class="nav-link" href="/src/components/admin/financeiro/financeiro.html">
+              <i class="fas fa-dollar-sign"></i> Financeiro
+            </a>
+            <a class="nav-link" href="/src/components/admin/ocorrencias/ocorrencias.html">
+              <i class="fas fa-exclamation-circle"></i> Ocorrências
+            </a>
+            <a class="nav-link" href="/src/components/admin/reservas/reservas.html">
+              <i class="fas fa-calendar-alt"></i> Reservas
+            </a>
+            <a class="nav-link" href="/src/components/admin/documentos/documentos.html">
+              <i class="fas fa-file-alt"></i> Documentos
+            </a>
+            <a class="nav-link" href="/src/components/admin/avisos/avisos.html">
+              <i class="fas fa-bullhorn"></i> Avisos
+            </a>
+            <a class="nav-link" href="/src/components/admin/manutencao/manutencao.html">
+              <i class="fas fa-tools"></i> Manutenção
+            </a>
+            <a class="nav-link" href="/src/components/admin/configuracoes/configuracoes.html">
+              <i class="fas fa-cog"></i> Configurações
+            </a>  
+        </div>
+        
+        <!-- Main Content -->
+        <div class="col-md-10 main-content">
+          <h2 class="mb-4">
+            <i class="fas fa-cog"></i> Configurações do Sistema
+          </h2>
+
+          <div class="row">
+            <!-- General Settings -->
+            <div class="col-md-6">
+              <div class="card settings-card">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <i class="fas fa-wrench settings-icon"></i> Configurações
+                    Gerais
+                  </h5>
+
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Nome do Condomínio</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="Edifício Centrale"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Endereço</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="Rua Example, 123"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Email de Contato</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        value="contato@Edifíciocentrale.com"
+                      />
+                    </div>
+
+                    <div class="mb-4">
+                      <label class="form-label">Logo do Condomínio</label>
+                      <div class="d-flex align-items-center mb-2">
+                        <img
+                          id="currentLogo"
+                          src="/src/assets/logo/logoPretaFundoTransparente.png"
+                          alt="Logo atual do condomínio"
+                          style="
+                            max-height: 100px;
+                            max-width: 200px;
+                            margin-right: 15px;
+                          "
+                        />
+                        <div class="btn-group">
+                          <button
+                            type="button"
+                            class="btn btn-outline-primary"
+                            id="changeLogo"
+                          >
+                            <i class="fas fa-upload"></i> Trocar Logo
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-outline-danger"
+                            id="removeLogo"
+                          >
+                            <i class="fas fa-trash"></i> Remover
+                          </button>
+                        </div>
+                      </div>
+                      <input
+                        type="file"
+                        id="logoInput"
+                        accept="image/*"
+                        style="display: none"
+                      />
+                      <small class="text-muted d-block"
+                        >Formatos aceitos: PNG, JPG, JPEG. Tamanho máximo:
+                        2MB</small
+                      >
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Fuso Horário</label>
+                      <select class="form-select">
+                        <option selected>America/Sao_Paulo</option>
+                        <option>America/Manaus</option>
+                        <option>America/Fortaleza</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-4">
+                      <label class="form-label">Cores do Sistema</label>
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label class="small">Cor Primária</label>
+                          <div class="input-group">
+                            <input
+                              type="color"
+                              class="form-control form-control-color"
+                              id="primaryColor"
+                              value="#2c3e50"
+                              title="Escolha a cor primária"
+                            />
+                            <input
+                              type="text"
+                              class="form-control"
+                              value="#2c3e50"
+                              id="primaryColorText"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="small">Cor Secundária</label>
+                          <div class="input-group">
+                            <input
+                              type="color"
+                              class="form-control form-control-color"
+                              id="secondaryColor"
+                              value="#34495e"
+                              title="Escolha a cor secundária"
+                            />
+                            <input
+                              type="text"
+                              class="form-control"
+                              value="#34495e"
+                              id="secondaryColorText"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="small">Cor de Destaque</label>
+                          <div class="input-group">
+                            <input
+                              type="color"
+                              class="form-control form-control-color"
+                              id="accentColor"
+                              value="#3498db"
+                              title="Escolha a cor de destaque"
+                            />
+                            <input
+                              type="text"
+                              class="form-control"
+                              value="#3498db"
+                              id="accentColorText"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="small">Cor de Sucesso</label>
+                          <div class="input-group">
+                            <input
+                              type="color"
+                              class="form-control form-control-color"
+                              id="successColor"
+                              value="#2ecc71"
+                              title="Escolha a cor de sucesso"
+                            />
+                            <input
+                              type="text"
+                              class="form-control"
+                              value="#2ecc71"
+                              id="successColorText"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="small">Cor de Aviso</label>
+                          <div class="input-group">
+                            <input
+                              type="color"
+                              class="form-control form-control-color"
+                              id="warningColor"
+                              value="#f1c40f"
+                              title="Escolha a cor de aviso"
+                            />
+                            <input
+                              type="text"
+                              class="form-control"
+                              value="#f1c40f"
+                              id="warningColorText"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="small">Cor de Perigo</label>
+                          <div class="input-group">
+                            <input
+                              type="color"
+                              class="form-control form-control-color"
+                              id="dangerColor"
+                              value="#e74c3c"
+                              title="Escolha a cor de perigo"
+                            />
+                            <input
+                              type="text"
+                              class="form-control"
+                              value="#e74c3c"
+                              id="dangerColorText"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label class="small">Cor de Fundo</label>
+                          <div class="input-group">
+                            <input
+                              type="color"
+                              class="form-control form-control-color"
+                              id="lightBgColor"
+                              value="#f5f6fa"
+                              title="Escolha a cor de fundo"
+                            />
+                            <input
+                              type="text"
+                              class="form-control"
+                              value="#f5f6fa"
+                              id="lightBgColorText"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mt-3">
+                        <label class="form-label">Temas Predefinidos</label>
+                        <div class="d-flex gap-2">
+                          <div
+                            class="theme-preset"
+                            data-theme="default"
+                            style="
+                              background: linear-gradient(
+                                45deg,
+                                #2c3e50,
+                                #3498db
+                              );
+                            "
+                          ></div>
+                          <div
+                            class="theme-preset"
+                            data-theme="dark"
+                            style="
+                              background: linear-gradient(
+                                45deg,
+                                #1a1a1a,
+                                #333333
+                              );
+                            "
+                          ></div>
+                          <div
+                            class="theme-preset"
+                            data-theme="light"
+                            style="
+                              background: linear-gradient(
+                                45deg,
+                                #f8f9fa,
+                                #e9ecef
+                              );
+                            "
+                          ></div>
+                          <div
+                            class="theme-preset"
+                            data-theme="blue"
+                            style="
+                              background: linear-gradient(
+                                45deg,
+                                #0056b3,
+                                #007bff
+                              );
+                            "
+                          ></div>
+                          <div
+                            class="theme-preset"
+                            data-theme="green"
+                            style="
+                              background: linear-gradient(
+                                45deg,
+                                #28a745,
+                                #20c997
+                              );
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          checked
+                        />
+                        <label class="form-check-label"
+                          >Notificações por Email</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          checked
+                        />
+                        <label class="form-check-label"
+                          >Notificações por WhatsApp</label
+                        >
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Photo Gallery -->
+              <div class="card settings-card">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <i class="fas fa-images settings-icon"></i> Galeria de Fotos
+                  </h5>
+
+                  <div class="mb-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-3"
+                    >
+                      <label class="form-label">Fotos do Condomínio</label>
+                      <div class="btn-group">
+                        <button class="btn btn-primary btn-sm" id="addPhotos">
+                          <i class="fas fa-plus"></i> Adicionar Fotos
+                        </button>
+                        <button
+                          class="btn btn-outline-primary btn-sm"
+                          id="createFolder"
+                        >
+                          <i class="fas fa-folder-plus"></i> Nova Pasta
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <div class="d-flex align-items-center">
+                        <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item">
+                              <a href="#" data-folder="root">Galeria</a>
+                            </li>
+                            <li class="breadcrumb-item folder-path"></li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
+
+                    <input
+                      type="file"
+                      id="photoInput"
+                      accept="image/*"
+                      multiple
+                      style="display: none"
+                    />
+
+                    <div class="row g-3" id="photoGallery">
+                      <!-- Folders will be displayed here -->
+                      <div class="col-md-4 col-6 folder-item">
+                        <div class="card h-100">
+                          <div class="card-body text-center">
+                            <i
+                              class="fas fa-folder fa-3x text-warning mb-2"
+                            ></i>
+                            <h6 class="folder-name mb-0">2023</h6>
+                            <small class="text-muted">12 items</small>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Photos will be displayed here -->
+                      <div class="col-md-4 col-6 photo-item">
+                        <div class="position-relative">
+                          <div class="drag-handle">
+                            <i class="fas fa-grip-vertical"></i>
+                          </div>
+                          <img
+                            src="/src/assets/fachada/fachadaIlustrativa.jpg"
+                            alt="Fachada do prédio"
+                            class="img-fluid rounded"
+                          />
+                          <div class="photo-overlay">
+                            <div class="btn-group">
+                              <button
+                                class="btn btn-sm btn-primary rename-photo"
+                                title="Renomear"
+                              >
+                                <i class="fas fa-edit"></i>
+                              </button>
+                              <button
+                                class="btn btn-sm btn-danger delete-photo"
+                                title="Excluir"
+                              >
+                                <i class="fas fa-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="photo-name">fachada-predio.jpg</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Backup Settings -->
+              <div class="card settings-card">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <i class="fas fa-database settings-icon"></i> Backup e
+                    Restauração
+                  </h5>
+
+                  <div class="mb-3">
+                    <label class="form-label"
+                      >Frequência do Backup Automático</label
+                    >
+                    <select class="form-select">
+                      <option>A cada 6 horas</option>
+                      <option>Diariamente</option>
+                      <option selected>Semanalmente</option>
+                      <option>Mensalmente</option>
+                    </select>
+                  </div>
+
+                  <div class="backup-status backup-success">
+                    <i class="fas fa-check-circle"></i>
+                    Último backup realizado: 15/05/2023 14:30
+                  </div>
+
+                  <div class="mt-3">
+                    <button class="btn btn-primary">
+                      <i class="fas fa-cloud-download-alt"></i> Fazer Backup
+                      Agora
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                      <i class="fas fa-history"></i> Restaurar Backup
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Settings -->
+            <div class="col-md-6">
+              <div class="card settings-card">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <i class="fas fa-shield-alt settings-icon"></i> Segurança
+                  </h5>
+
+                  <div class="mb-3">
+                    <label class="form-label">Política de Senhas</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" checked />
+                      <label class="form-check-label"
+                        >Exigir letras maiúsculas</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" checked />
+                      <label class="form-check-label">Exigir números</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" checked />
+                      <label class="form-check-label"
+                        >Exigir caracteres especiais</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label"
+                      >Tempo de Expiração da Sessão</label
+                    >
+                    <select class="form-select">
+                      <option>15 minutos</option>
+                      <option selected>30 minutos</option>
+                      <option>1 hora</option>
+                      <option>4 horas</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label"
+                      >Autenticação em Duas Etapas</label
+                    >
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" checked />
+                      <label class="form-check-label"
+                        >Ativar para todos os usuários</label
+                      >
+                    </div>
+                  </div>
+
+                  <button class="btn btn-warning">
+                    <i class="fas fa-key"></i> Redefinir Todas as Senhas
+                  </button>
+                </div>
+              </div>
+
+              <!-- Integration Settings -->
+              <div class="card settings-card">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <i class="fas fa-plug settings-icon"></i> Integrações
+                  </h5>
+
+                  <div class="mb-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between p-2 border rounded mb-2"
+                    >
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="/img/whatsapp-logo.png"
+                          alt="WhatsApp Logo"
+                          class="integration-logo me-2"
+                        />
+                        <span>WhatsApp Business API</span>
+                      </div>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          checked
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex align-items-center justify-content-between p-2 border rounded mb-2"
+                    >
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="/img/google-logo.png"
+                          alt="Google Calendar Logo"
+                          class="integration-logo me-2"
+                        />
+                        <span>Google Calendar</span>
+                      </div>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          checked
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex align-items-center justify-content-between p-2 border rounded"
+                    >
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="/img/payment-logo.png"
+                          alt="Payment Gateway Logo"
+                          class="integration-logo me-2"
+                        />
+                        <span>Gateway de Pagamento</span>
+                      </div>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          checked
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex align-items-center justify-content-between p-2 border rounded mb-2"
+                  >
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="fas fa-cloud integration-logo me-2 text-primary"
+                      ></i>
+                      <span>Previsão do Tempo API</span>
+                    </div>
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="weatherApiToggle"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    id="weatherApiConfig"
+                    class="mb-3 p-2 border rounded"
+                    style="display: none"
+                  >
+                    <div class="mb-2">
+                      <label class="form-label">API Provider</label>
+                      <select class="form-select" id="weatherProvider">
+                        <option value="openweather">OpenWeatherMap</option>
+                        <option value="weatherapi">WeatherAPI.com</option>
+                        <option value="accuweather">AccuWeather</option>
+                      </select>
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">API Key</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="weatherApiKey"
+                        placeholder="Insira sua API key"
+                      />
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">Intervalo de Atualização</label>
+                      <select class="form-select" id="weatherUpdateInterval">
+                        <option value="1">1 hora</option>
+                        <option value="3">3 horas</option>
+                        <option value="6">6 horas</option>
+                        <option value="12">12 horas</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">API Key</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control api-key"
+                        value="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                        readonly
+                      />
+                      <button class="btn btn-outline-secondary">
+                        <i class="fas fa-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+
+
+
+                  <div
+                    class="d-flex align-items-center justify-content-between p-2 border rounded mb-2"
+                  >
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="fas fa-envelope integration-logo me-2 text-primary"
+                      ></i>
+                      <span>Email API</span>
+                    </div>
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="emailApiToggle"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    id="emailApiConfig"
+                    class="mb-3 p-2 border rounded"
+                    style="display: none"
+                  >
+                    <div class="mb-2">
+                      <label class="form-label">Provedor de Email</label>
+                      <select class="form-select" id="emailProvider">
+                        <option value="sendgrid">SendGrid</option>
+                        <option value="mailgun">Mailgun</option>
+                        <option value="ses">Amazon SES</option>
+                        <option value="smtp">SMTP Personalizado</option>
+                      </select>
+                    </div>
+                    <div class="mb-2">
+                      <label class="form-label">API Key</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="emailApiKey"
+                        placeholder="Insira sua API key"
+                      />
+                    </div>
+                    <div id="smtpConfig" style="display: none">
+                      <div class="mb-2">
+                        <label class="form-label">Servidor SMTP</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="smtpServer"
+                          placeholder="smtp.exemplo.com"
+                        />
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label">Porta</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="smtpPort"
+                          placeholder="587"
+                        />
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label">Usuário</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="smtpUser"
+                          placeholder="user@exemplo.com"
+                        />
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label">Senha</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="smtpPassword"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                    <button class="btn btn-primary">
+                    <i class="fas fa-sync"></i> Atualizar Integrações
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Save Changes -->
+          <div class="row mt-4">
+            <div class="col-12">
+              <div class="card settings-card">
+                <div class="card-body text-end">
+                  <button class="btn btn-secondary me-2">
+                    Cancelar Alterações
+                  </button>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-save"></i> Salvar Configurações
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script src="/src/components/admin/configuracoes/configuracoes.js"></script>
+  </body>
+</html>

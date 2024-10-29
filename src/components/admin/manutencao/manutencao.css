@@ -1,0 +1,173 @@
+      :root {
+        --primary: #2c3e50;
+        --secondary: #34495e;
+        --accent: #3498db;
+        --success: #2ecc71;
+        --warning: #f1c40f;
+        --danger: #e74c3c;
+        --light-bg: #f5f6fa;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: var(--light-bg);
+      }
+
+      .navbar {
+        background: var(--primary);
+      }
+
+      .sidebar {
+        background: var(--secondary);
+        min-height: calc(100vh - 56px);
+        color: white;
+        padding-top: 20px;
+      }
+
+      .sidebar .nav-link {
+        color: rgba(255, 255, 255, 0.8);
+        padding: 12px 20px;
+        margin: 4px 0;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+
+      .sidebar .nav-link:hover,
+      .sidebar .nav-link.active {
+        background: var(--primary);
+        color: white;
+      }
+
+      .sidebar .nav-link i {
+        width: 25px;
+      }
+
+      .main-content {
+        padding: 20px;
+      }
+
+      .maintenance-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+
+      .maintenance-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .status-badge {
+        font-size: 0.8em;
+        padding: 5px 10px;
+        border-radius: 15px;
+      }
+
+      .status-pending {
+        background: #fff3cd;
+        color: #856404;
+      }
+
+      .status-in-progress {
+        background: #cce5ff;
+        color: #004085;
+      }
+
+      .status-completed {
+        background: #d4edda;
+        color: #155724;
+      }
+
+      .maintenance-timeline {
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -25px;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background: #dee2e6;
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        left: -29px;
+        top: 5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .priority-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .priority-high {
+        background: var(--danger);
+      }
+      .priority-medium {
+        background: var(--warning);
+      }
+      .priority-low {
+        background: var(--success);
+      }
+
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+      }
+
+      .calendar-day {
+        aspect-ratio: 1;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 0.9em;
+      }
+
+      .calendar-day.has-maintenance {
+        background: #e8f4fd;
+        border-color: var(--accent);
+      }
+
+      .task-progress {
+        height: 8px;
+        border-radius: 4px;
+      }
+
+      .attachment-preview {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .cost-badge {
+        background: #e9ecef;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.9em;
+      }
+
+      .supplier-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
