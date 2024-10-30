@@ -13,35 +13,6 @@ body {
   background: var(--light-bg);
 }
 
-.navbar {
-  background: var(--primary);
-}
-
-.sidebar {
-  background: var(--secondary);
-  min-height: calc(100vh - 56px);
-  color: white;
-  padding-top: 20px;
-}
-
-.sidebar .nav-link {
-  color: rgba(255, 255, 255, 0.8);
-  padding: 12px 20px;
-  margin: 4px 0;
-  border-radius: 5px;
-  transition: all 0.3s;
-}
-
-.sidebar .nav-link:hover,
-.sidebar .nav-link.active {
-  background: var(--primary);
-  color: white;
-}
-
-.sidebar .nav-link i {
-  width: 25px;
-}
-
 .main-content {
   padding: 20px;
 }

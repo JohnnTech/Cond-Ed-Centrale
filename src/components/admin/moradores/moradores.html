@@ -19,55 +19,16 @@
       rel="stylesheet"
       href="/src/components/admin/moradores/moradores.css"
     />
+    <link rel="stylesheet" href="/src/components/admin/sidebar/sidebar.css">
+    <link rel="stylesheet" href="/src/components/admin/navbar/navbar.css">
+    <link rel="stylesheet" href="/main.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/src/components/admin/dashboard/dashboard.html">
-      <i class="fas fa-building me-2"></i>Edifício Centrale - Admin
-    </a>
-    <div class="d-flex align-items-center">
-      <span class="text-white me-3">Bem-vindo, Carlos (Síndico)</span>
-      <a href="/src/components/logout/logout.html" class="btn btn-outline-light btn-sm">
-        <i class="fas fa-sign-out-alt"></i> Sair
-      </a>
-    </div>
-  </div>
-</nav>
-
-<div class="container-fluid">
-  <div class="row">
-    <!-- Sidebar -->
-    <div class="col-md-2 sidebar">
-      <nav class="nav flex-column">
-        <a class="nav-link" href="/src/components/admin/dashboard/dashboard.html">
-          <i class="fas fa-tachometer-alt"></i> Dashboard
-        </a>
-        <a class="nav-link" href="/src/components/admin/moradores/moradores.html">
-          <i class="fas fa-users"></i> Moradores
-        </a>
-        <a class="nav-link" href="/src/components/admin/financeiro/financeiro.html">
-          <i class="fas fa-dollar-sign"></i> Financeiro
-        </a>
-        <a class="nav-link" href="/src/components/admin/ocorrencias/ocorrencias.html">
-          <i class="fas fa-exclamation-circle"></i> Ocorrências
-        </a>
-        <a class="nav-link" href="/src/components/admin/reservas/reservas.html">
-          <i class="fas fa-calendar-alt"></i> Reservas
-        </a>
-        <a class="nav-link" href="/src/components/admin/documentos/documentos.html">
-          <i class="fas fa-file-alt"></i> Documentos
-        </a>
-        <a class="nav-link" href="/src/components/admin/avisos/avisos.html">
-          <i class="fas fa-bullhorn"></i> Avisos
-        </a>
-        <a class="nav-link" href="/src/components/admin/manutencao/manutencao.html">
-          <i class="fas fa-tools"></i> Manutenção
-        </a>
-        <a class="nav-link" href="/src/components/admin/configuracoes/configuracoes.html">
-          <i class="fas fa-cog"></i> Configurações
-        </a>  
-    </div>
+    <div id="navbar"></div>
+    <div class="container-fluid d-flex">
+      <div class="row ">
+        <div id="sidebar"></div>
+      </div>
 
         <!-- Main Content -->
         <div class="col-md-10 main-content">
@@ -281,6 +242,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="/src/components/admin/navbar/navbar.js"></script>
+    <script src="/src/components/admin/sidebar/sidebar.js"></script>
     <script src="/src/components/admin/moradores/moradores.js"></script>
   </body>
 </html>

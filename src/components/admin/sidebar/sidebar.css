@@ -7,11 +7,36 @@
   --success: #2ecc71;
   --light-bg: #f5f6fa;
 }
-
-body {
-  font-family: "Segoe UI", sans-serif;
-  background: var(--light-bg);
+.navbar {
+  background: var(--primary);
 }
+
+.sidebar {
+  background: var(--secondary);
+  min-height: calc(100vh - 56px);
+  color: white;
+  padding-top: 20px;
+  padding-left: 0px;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px 20px;
+  margin: 0px 0;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: var(--primary);
+  color: white;
+}
+
+.sidebar .nav-link i {
+  width: 25px;
+}
+
 /* Ajustes de estilo para barra lateral em telas pequenas */
 
 @media all and (min-width: 0px) and (max-width: 991px) {
@@ -26,7 +51,7 @@ body {
   }
   .container-fluid{
     padding-right: 0px;
-    margin-left: 6px;
+    margin-left: 0px;
     justify-content: center;
   }
     .main-content{
@@ -43,8 +68,9 @@ body {
   }
     .container-fluid{
     padding-right: 0px;
-    margin-left: 6px;
+    margin-left: 0px;
     justify-content: center;
+    width: 100%;
   }
 
 }
