@@ -1,0 +1,12 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #34495e;
+  --accent: #3498db;
+  --warning: #f1c40f;
+  --danger: #e74c3c;
+  --success: #2ecc71;
+  --light-bg: #f5f6fa;
+}
+.navbar {
+  background: var(--primary);
+}

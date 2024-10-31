@@ -1,0 +1,249 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão de Moradores - Edifício Centrale</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/frontend/src/pages/admin/moradores/moradores.css"
+    />
+    <link rel="stylesheet" href="/frontend/src/components/admin/sidebar/sidebar.css">
+    <link rel="stylesheet" href="/frontend/src/components/admin/navbar/navbar.css">
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="container-fluid d-flex">
+      <div class="row ">
+        <div id="sidebar"></div>
+      </div>
+
+        <!-- Main Content -->
+        <div class="col-md-10 main-content">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2><i class="fas fa-users"></i> Gestão de Moradores</h2>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#addResidentModal"
+            >
+              <i class="fas fa-plus"></i> Novo Morador
+            </button>
+          </div>
+
+          <!-- Filters Card -->
+          <div class="card filter-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <label>Bloco</label>
+                  <select class="form-select">
+                    <option value="">Todos</option>
+                    <option>Bloco A</option>
+                    <option>Bloco B</option>
+                    <option>Bloco C</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label>Status</label>
+                  <select class="form-select">
+                    <option value="">Todos</option>
+                    <option>Ativo</option>
+                    <option>Inativo</option>
+                    <option>Pendente</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label>Buscar</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Nome, apartamento ou CPF..."
+                  />
+                </div>
+                <div class="col-md-2">
+                  <label>&nbsp;</label>
+                  <button class="btn btn-primary w-100">
+                    <i class="fas fa-search"></i> Filtrar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Residents Table -->
+          <div class="card">
+            <div class="card-body">
+              <table id="residentsTable" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Apto</th>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Contato</th>
+                    <th>Status</th>
+                    <th>Última Atualização</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>101</td>
+                    <td>João Silva</td>
+                    <td>Proprietário</td>
+                    <td>(61) 98765-4321</td>
+                    <td>
+                      <span class="badge bg-success status-badge">Ativo</span>
+                    </td>
+                    <td>15/05/2024</td>
+                    <td class="action-buttons">
+                      <button class="btn btn-sm btn-info" title="Ver detalhes">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="btn btn-sm btn-primary" title="Editar">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn btn-sm btn-danger" title="Remover">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>202</td>
+                    <td>Maria Santos</td>
+                    <td>Inquilino</td>
+                    <td>(61) 97654-3210</td>
+                    <td>
+                      <span class="badge bg-success status-badge">Ativo</span>
+                    </td>
+                    <td>14/05/2024</td>
+                    <td class="action-buttons">
+                      <button class="btn btn-sm btn-info" title="Ver detalhes">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="btn btn-sm btn-primary" title="Editar">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn btn-sm btn-danger" title="Remover">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Resident Modal -->
+    <div class="modal fade" id="addResidentModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Adicionar Novo Morador</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addResidentForm">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Nome Completo</label>
+                  <input type="text" class="form-control" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">CPF</label>
+                  <input type="text" class="form-control" required />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">Bloco</label>
+                  <select class="form-select" required>
+                    <option value="">Selecione...</option>
+                    <option>Bloco A</option>
+                    <option>Bloco B</option>
+                    <option>Bloco C</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Apartamento</label>
+                  <input type="text" class="form-control" required />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Tipo</label>
+                  <select class="form-select" required>
+                    <option value="">Selecione...</option>
+                    <option>Proprietário</option>
+                    <option>Inquilino</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Telefone</label>
+                  <input type="tel" class="form-control" required />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Data de Nascimento</label>
+                  <input type="date" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Data de Entrada</label>
+                  <input type="date" class="form-control" required />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Observações</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="/frontend/src/components/admin/navbar/navbar.js"></script>
+    <script src="/frontend/src/components/admin/sidebar/sidebar.js"></script>
+    <script src="/frontend/src/pages/admin/moradores/moradores.js"></script>
+  </body>
+</html>

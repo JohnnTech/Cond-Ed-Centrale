@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redefinir Senha - Admin Edifício Centrale</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/frontend/src/pages/admin/recuperar-senha/recuperar-senha.css"
+    />
+  </head>
+  <body>
+    <div class="reset-container">
+      <div class="reset-header">
+        <a href="/frontend/src/pages/admin/login/login.html" class="back-btn">
+          <i class="bx bx-chevron-left"></i>
+        </a>
+        <h2><i class="bx bx-lock-open"></i> Redefinir Senha</h2>
+      </div>
+
+      <div class="reset-form">
+        <div class="alert alert-success" role="alert" id="successAlert">
+          Email enviado com sucesso! Verifique sua caixa de entrada.
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="errorAlert">
+          Ocorreu um erro. Por favor, tente novamente.
+        </div>
+
+        <div class="reset-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">Insira seu email administrativo</div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">Digite o código recebido por email</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">Defina sua nova senha</div>
+          </div>
+        </div>
+
+        <!-- Step 1: Email Form -->
+        <div class="step-email-form active">
+          <div class="form-group">
+            <label class="form-label">Email Administrativo</label>
+            <input type="email" class="form-control" id="adminEmail" required />
+          </div>
+          <button type="button" class="btn btn-reset" onclick="sendResetCode()">
+            Enviar Código
+          </button>
+        </div>
+
+        <!-- Step 2: Verification Code Form -->
+        <div class="step-code-form">
+          <div class="form-group">
+            <label class="form-label">Código de Verificação</label>
+            <input
+              type="text"
+              class="form-control"
+              id="verificationCode"
+              maxlength="6"
+              required
+            />
+          </div>
+          <button type="button" class="btn btn-reset" onclick="verifyCode()">
+            Verificar Código
+          </button>
+        </div>
+
+        <!-- Step 3: New Password Form -->
+        <div class="step-password-form">
+          <div class="form-group">
+            <label class="form-label">Nova Senha</label>
+            <input
+              type="password"
+              class="form-control"
+              id="newPassword"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirmar Nova Senha</label>
+            <input
+              type="password"
+              class="form-control"
+              id="confirmPassword"
+              required
+            />
+          </div>
+          <button type="button" class="btn btn-reset" onclick="resetPassword()">
+            Redefinir Senha
+          </button>
+        </div>
+      </div>
+
+      <div class="reset-footer">
+        <small>© 2024 Edifício Centrale - Painel Administrativo</small>
+      </div>
+    </div>
+
+    <script src="/frontend/src/pages/admin/recuperar-senha/recuperar-senha.js"></script>
+  </body>
+</html>

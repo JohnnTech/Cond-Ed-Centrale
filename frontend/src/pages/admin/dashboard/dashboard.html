@@ -1,0 +1,170 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Administrativo - Edifício Centrale</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/apexcharts@3.35.0/dist/apexcharts.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/frontend/src/pages/admin/dashboard/dashboard.css">
+<link rel="stylesheet" href="/frontend/src/components/admin/sidebar/sidebar.css">
+<link rel="stylesheet" href="/frontend/src/components/admin/navbar/navbar.css">
+<link rel="stylesheet" href="/main.css">
+
+</head>
+<body>
+
+<div id="navbar"></div>
+<div class="container-fluid d-flex">
+  <div class="row ">
+    <div id="sidebar"></div>
+  </div>
+    <!-- Main Content -->
+    <div class="col-md-12 main-content">
+      <div class="row mb-4">
+        <!-- Statistics Cards -->
+        <div class="col-md-3">
+          <div class="card stat-card bg-primary text-white">
+            <div class="card-body">
+              <h6 class="card-title">Total de Moradores</h6>
+              <h2 class="mb-0">10</h2>
+              <small>+3 este mês</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card stat-card bg-success text-white">
+            <div class="card-body">
+              <h6 class="card-title">Arrecadação Mensal</h6>
+              <h2 class="mb-0">R$ 3.250</h2>
+              <small>98% do previsto</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card stat-card bg-warning text-white">
+            <div class="card-body">
+              <h6 class="card-title">Ocorrências Abertas</h6>
+              <h2 class="mb-0">12</h2>
+              <small>5 pendentes</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card stat-card bg-danger text-white">
+            <div class="card-body">
+              <h6 class="card-title">Inadimplência</h6>
+              <h2 class="mb-0">2.3%</h2>
+              <small>-0.5% que mês anterior</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Quick Actions -->
+        <div class="col-md-3">
+          <h5 class="mb-3">Ações Rápidas</h5>
+          <div class="quick-action">
+            <i class="fas fa-plus-circle text-primary me-2"></i>
+            Novo Aviso
+          </div>
+          <div class="quick-action">
+            <i class="fas fa-user-plus text-success me-2"></i>
+            Cadastrar Morador
+          </div>
+          <div class="quick-action">
+            <i class="fas fa-calendar-plus text-warning me-2"></i>
+            Nova Reserva
+          </div>
+          <div class="quick-action">
+            <i class="fas fa-file-upload text-info me-2"></i>
+            Upload Documento
+          </div>
+          
+          <!-- Latest Notifications -->
+          <h5 class="mt-4 mb-3">Últimas Notificações</h5>
+          <div class="notification-item urgent">
+            <small class="text-muted">Há 1 hora</small>
+            <p class="mb-0">Vazamento reportado no 3º andar</p>
+          </div>
+          <div class="notification-item warning">
+            <small class="text-muted">Há 3 horas</small>
+            <p class="mb-0">Novo agendamento de mudança</p>
+          </div>
+          <div class="notification-item info">
+            <small class="text-muted">Há 5 horas</small>
+            <p class="mb-0">Documento aprovado: Ata de reunião</p>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="chart-card">
+                <h5>Despesas vs Receitas</h5>
+                <div id="financeChart"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="chart-card">
+                <h5>Ocorrências por Categoria</h5>
+                <div id="occurrencesChart"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Recent Activities -->
+          <div class="chart-card">
+            <h5>Atividades Recentes</h5>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Data/Hora</th>
+                    <th>Usuário</th>
+                    <th>Ação</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15/05 14:30</td>
+                    <td>Maria Silva</td>
+                    <td>Reserva da Churrasqueira</td>
+                    <td><span class="badge bg-success">Aprovada</span></td>
+                  </tr>
+                  <tr>
+                    <td>15/05 13:45</td>
+                    <td>João Santos</td>
+                    <td>Registro de Ocorrência</td>
+                    <td><span class="badge bg-warning">Pendente</span></td>
+                  </tr>
+                  <tr>
+                    <td>15/05 11:20</td>
+                    <td>Ana Costa</td>
+                    <td>Pagamento de Taxa</td>
+                    <td><span class="badge bg-primary">Confirmado</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.35.0/dist/apexcharts.min.js"></script>
+<script src="/frontend/src/components/admin/navbar/navbar.js"></script>
+<script src="/frontend/src/components/admin/sidebar/sidebar.js"></script>
+<script src="/frontend/src/pages/admin/dashboard/dashboard.js">
+
+</script>
+
+</body>
+</html>

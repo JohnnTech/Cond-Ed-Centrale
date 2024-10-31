@@ -1,0 +1,237 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ocorrências - Edificil Centrale</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/frontend/src/pages/ocorrencias/ocorrencias.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/"
+          ><i class="fas fa-building me-2"></i>Edificil Centrale</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/frontend/src/pages/home-morador/home-morador.html"
+                ><i class="fas fa-home me-1"></i>Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/frontend/src/pages/minhas-reservas/minhas-reservas.html"
+                ><i class="fas fa-calendar-alt me-1"></i>Minhas Reservas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/frontend/src/pages/ocorrencias/ocorrencias.html"
+                ><i class="fas fa-exclamation-circle me-1"></i>Ocorrências</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/frontend/src/pages/financeiro/financeiro.html"
+                ><i class="fas fa-dollar-sign me-1"></i>Financeiro</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/frontend/src/pages/perfil/perfil.html"
+                ><i class="fas fa-user me-1"></i>Perfil</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <h2><i class="fas fa-exclamation-circle me-2"></i>Ocorrências</h2>
+        </div>
+        <div class="col-md-4 text-end">
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#newOccurrenceModal"
+          >
+            <i class="fas fa-plus me-2"></i>Nova Ocorrência
+          </button>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="d-flex flex-wrap">
+            <span class="filter-button active" data-filter="all">Todas</span>
+            <span class="filter-button" data-filter="open">Abertas</span>
+            <span class="filter-button" data-filter="in-progress"
+              >Em Andamento</span
+            >
+            <span class="filter-button" data-filter="resolved">Resolvidas</span>
+            <span class="filter-button" data-filter="closed">Fechadas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Occurrences List -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- High Priority -->
+          <div class="card occurrence-card priority-high mb-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title">Vazamento na garagem</h5>
+                <span class="status-badge status-in-progress"
+                  >Em Andamento</span
+                >
+              </div>
+              <p class="card-text text-muted mb-2">
+                <small
+                  ><i class="fas fa-clock me-1"></i>Aberto em: 15/07/2024
+                  14:30</small
+                >
+              </p>
+              <p class="card-text">
+                Vazamento identificado próximo à vaga 45, com acúmulo
+                significativo de água.
+              </p>
+              <div class="comments-section mt-3">
+                <div class="comment">
+                  <p class="mb-1">
+                    <strong>Síndico:</strong> Equipe de manutenção notificada e
+                    agendada para amanhã.
+                  </p>
+                  <small class="text-muted">16/07/2024 09:15</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Medium Priority -->
+          <div class="card occurrence-card priority-medium mb-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title">Lâmpada queimada no corredor</h5>
+                <span class="status-badge status-open">Aberta</span>
+              </div>
+              <p class="card-text text-muted mb-2">
+                <small
+                  ><i class="fas fa-clock me-1"></i>Aberto em: 16/07/2024
+                  10:45</small
+                >
+              </p>
+              <p class="card-text">
+                Lâmpada do 3º andar, próxima ao apartamento 302, está queimada.
+              </p>
+            </div>
+          </div>
+
+          <!-- Low Priority -->
+          <div class="card occurrence-card priority-low mb-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title">Sugestão de jardinagem</h5>
+                <span class="status-badge status-resolved">Resolvida</span>
+              </div>
+              <p class="card-text text-muted mb-2">
+                <small
+                  ><i class="fas fa-clock me-1"></i>Aberto em: 10/07/2024
+                  16:20</small
+                >
+              </p>
+              <p class="card-text">
+                Sugestão para incluir mais plantas ornamentais na entrada do
+                prédio.
+              </p>
+              <div class="comments-section mt-3">
+                <div class="comment">
+                  <p class="mb-1">
+                    <strong>Administração:</strong> Agradecemos a sugestão. Será
+                    discutido na próxima reunião.
+                  </p>
+                  <small class="text-muted">11/07/2024 11:30</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Occurrence Modal -->
+    <div class="modal fade" id="newOccurrenceModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nova Ocorrência</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="newOccurrenceForm">
+              <div class="mb-3">
+                <label class="form-label">Título</label>
+                <input type="text" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Descrição</label>
+                <textarea class="form-control" rows="4" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Prioridade</label>
+                <select class="form-select">
+                  <option value="low">Baixa</option>
+                  <option value="medium">Média</option>
+                  <option value="high">Alta</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Localização</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Anexos</label>
+                <input type="file" class="form-control" multiple />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Registrar Ocorrência
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/frontend/src/pages/ocorrencias/ocorrencias.js"></script>
+  </body>
+</html>
